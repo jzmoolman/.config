@@ -1,0 +1,21 @@
+{
+  "cache": [
+    {
+      "key": {
+        "key": "user/446450136466-2hr92jrq8e6i4tnsa56b52vacp7t3936.apps.googleusercontent.com",
+        "scopes": [
+          "https://www.googleapis.com/auth/userinfo.email"
+        ]
+      },
+      "token": {
+        "access_token": "ya29.a0AfH6SMDrxOTTvDjB950vS4CehndJPGapDVXRb4q0kcsqJt5TDY_holdrIDYFQLJWqiFNXR2ZpZb9w5-8pSg8iEUk5zIjNnOhgGBNDSuszfo8ECcY7SE-w9pM1QgRySbJX574RAAduGPazLVyc-ex4fHZQW7naQH7r90",
+        "token_type": "Bearer",
+        "refresh_token": "1//03b46KiLpLxlgCgYIARAAGAMSNwF-L9IrNsFORNYR99M5aR2t7Ky12CUykhfQAlfxYtEXWVWqzvvmlc4zgxQbpQrJJEI3EOJE3UU",
+        "expiry": "2020-07-18T15:13:04.211658Z"
+      },
+      "email": "jzmoolman@scapticom.co.za",
+      "last_update": "2020-07-18T14:13:06.024888Z"
+    }
+  ],
+  "last_update": "2020-07-18T14:13:06.024888Z"
+}

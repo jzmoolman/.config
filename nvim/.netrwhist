@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/Users/jzmoolman/.config/nvim'
+let g:netrw_dirhist_0='/Users/jzmoolman/src/modvim/big-docs/app/templates/components'
+let g:netrw_dirhist_9='/Users/jzmoolman/.config/zsh'
+let g:netrw_dirhist_8='/Users/jzmoolman/src/vimtricks'
+let g:netrw_dirhist_7='/Users/jzmoolman/src/CS50/assignment2/src'
+let g:netrw_dirhist_6='/Users/jzmoolman/src/CS50/assignment2/src/states'
+let g:netrw_dirhist_5='/Users/jzmoolman/src/CS50/assignment2/src'
+let g:netrw_dirhist_4='/Users/jzmoolman/src/CS50/assignment2/src/states'
+let g:netrw_dirhist_3='/Users/jzmoolman/src/CS50/assignment2/src'
+let g:netrw_dirhist_2='/Users/jzmoolman/src/CS50/assignment2/src/states'
