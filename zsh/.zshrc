@@ -11,6 +11,8 @@ PS1+=' λ'
 PS1+='%(2L.+ . )'
 PS1+='%{${fg[white]}${bg[black]}%}'
 
+VISUAL=nvim
+
 
 update_terminal_cwd() {
     # Identify the directory using a "file:" scheme URL, including
