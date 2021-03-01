@@ -3,3 +3,5 @@
 # Please adapt and uncomment the following lines:
 	name = jzmoolman
 	email = jzmoolman@scapticom.co.za
+[core]
+	editor = nvim
