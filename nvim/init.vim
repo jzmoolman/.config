@@ -86,3 +86,4 @@ EOF
     " telescope
     nnoremap <Leader>pf :lua require('telescope.builtin').find_files()<CR>
 
+    #TEST GIT
