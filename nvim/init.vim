@@ -83,7 +83,6 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
     
-    " telescope
-    nnoremap <Leader>pf :lua require('telescope.builtin').find_files()<CR>
+" telescope
+nnoremap <Leader>pf :lua require('telescope.builtin').find_files()<CR>
 
-#TEST GIT - rebase
