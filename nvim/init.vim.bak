@@ -1,174 +1,88 @@
-    " To fix colorschemes
-    if (has("termguicolors"))
-        set termguicolors
-    endif
-    
-    " Fish doesn't play all that well with others
+    " Options
     set shell=/bin/zsh
-
-    " Show line numbers.
-    ""set number - Can't see the difference if both are set? will tke out if I am done
+    set guicursor=
     set relativenumber
-    
-    " Disable audible bell because it's annoying.
+    set nu
     set noerrorbells visualbell t_vb=
-
-    " Try to prevent bad habits like using the arrow keys for movement. This is
-    " not the only possible bad habit. For example, holding down the h/j/k/l keys
-    " for movement, rather than using more efficient movement commands, is also a
-    " bad habit. The former is enforceable through a .vimrc, while we don't know
-    " how to prevent the latter.
-    " Do this in normal mode...
-    nnoremap <Left>  :echo "Use h"<CR>
-    nnoremap <Right> :echo "Use l"<CR>
-    nnoremap <Up>    :echo "Use k"<CR>
-    nnoremap <Down>  :echo "Use j"<CR>
-    
-    " ...and in insert mode
-    inoremap <Left>  <ESC>:echo "Use h"<CR>
-    inoremap <Right> <ESC>:echo "Use l"<CR>
-    inoremap <Up>    <ESC>:echo "Use k"<CR>
-    inoremap <Down>  <ESC>:echo "Use j"<CR>
-
-    " Spaces & Tabs
-    set tabstop=4       " number of visual spaces per TAB
-    
-    " This is set automatically when vimrc is run, but it's good to know why it exists
-    " Default - if vimrc are found
-    if &compatible
-        set nocompatible
-    endif
-
-    " Minpac setup
-    packadd minpac
-    
-    call minpac#init()
-    call minpac#add('k-takata/minpac', {'type': 'opt'})
-    
-    command! Packupdate call minpac#update()
-    command! Packclean call minpac#clean()
-    command! Packstatus call minpac#status()
-
-    " Packages -
-    call minpac#add('tpope/vim-scriptease', {'type': 'opt'})
-
-    call minpac#add('preservim/nerdtree')
-
-    " Packages - colorschemes 
-    call minpac#add('morhetz/gruvbox')
-    call minpac#add('joshdick/onedark.vim')
-    call minpac#add('arcticicestudio/nord-vim')
-
-    " Packages - NERDTree
-    call minpac#add('preservim/nerdtree')
-    
-    " Packages  - fzf 
-    call minpac#add('junegunn/fzf')
-
-    " Packages - Pythons tools
-    " Package - Syntax highlighting
-    call minpac#add('numirias/semshi')
-    
-    " Package - Indentation
-    call minpac#add('Vimjas/vim-python-pep8-indent') 
-
-    " Packages - Linting & Fixing
-    call minpac#add('dense-analysis/ale')
-
-    " Packages - Auto Complete stuff
-    call minpac#add('kiteco/vim-plugin')
-
-    " Packages Setup - colorscheme
-    colorscheme nord
-
-    " Packages Setup - Linting & Fixing
-    let g:ale_linters = {
-                \   'python': ['flake8', 'pylint'],
-                \   'javascript': ['eslint'],
-                \}
-    let g:ale_fixers = {
-                \   'python': ['yapf'],
-                \}
-    nmap <F10> :ALEFix<CR>
-    let g:ale_fix_on_save = 1
-
-    " Packages Setup - FZF Key bindings
-    nnoremap <C-p> :<C-u>FZF<CR>
-
-    " Turn on syntax highlighting on.
-    syntax on
-
-
-    " Show a visual line under the cursor's current line
-    set cursorline
-
-    " Show the matching part of the pair for [] {} ()
-    "" set showmatch -- Can;t see a difference
-
-    " Statusbar
-    set statusline=%<%f\ %h%m%r%{kite#statusline()}%=%-14.(%l,%c%V%)\ %P
-    
-    " Always show the status line at the bottom, even if you only have one window open.
-    set laststatus=2
-
-    " Default behavior is not so intuitive
-    " Default
-    set backspace=indent,eol,start
-
-    "" Enable searching as you type, rather than waiting till you press enter.
+  1  set tabstop=4
+    set softtabstop=4
+  1  set shiftwidth=4
+  1  set expandtab
+  1  set smartindent
+    set nowrap
+    set noswapfile
+    set nobackup
+    set undodir=$HOME/.config/nvim/undodir
+    set undofile
     set incsearch
-
-    " Unbind some useless/annoying default key bindings.
-    " 'Q' in normal mode enters Ex mode. You almost never want this.
-    nmap Q <Nop> 
-
-    set softtabstop=4   " number of spaces in tab when editing
-    set shiftwidth=4    " number of spaces to use for autoindent
-    set expandtab       " tabs are space
-    set autoindent
-    set copyindent      " copy indent from the previous line
-
-    " Setup whitespace chars
+    set termguicolors
+    set scrolloff=8
+    set signcolumn=yes
+    set cursorline
+    "set statusline=%<%f\ %h%m%r%{kite#statusline()}%=%-14.(%l,%c%V%)\ %P
+    set laststatus=2
+    set backspace=indent,eol,start
     set list
     set listchars=trail:·,precedes:«,extends:»,space:·
-
-    " Open new split Panes to right and below
     set splitright
     set splitbelow
+    set colorcolumn=80
 
-    " Key binding for window foucs
-    nnoremap <C-J> <C-W><C-J>
-    nnoremap <C-K> <C-W><C-K>
-    nnoremap <C-H> <C-W><C-H>
-    nnoremap <C-L> <C-W><C-L>
+    call plug#begin('~/.vim/plugged') 
+    
+    " Packages -
+    Plug 'tpope/vim-scriptease'
+  
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'nvim-lua/completion-nvim'
+    " Neovim Tree shitter
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/playground'
+    
+    " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    " Plug 'junegunn/fzf.vim'
+    
+    " telescope requirements...
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
 
-    " Turn terminal to normal mode with escape
-    tnoremap <Esc> <C-\><C-n>
-    "Start terminal in insert mode
-    au BufEnter * if &buftype == 'terminal' | :startinsert | endif
-    " Open terminal on ctrl+n
-    function! OpenTerminal()
-        split term://zsh
-        resize 10
-    endfunction
-    nnoremap <c-n> :call OpenTerminal()<CR>
+    " Packages - colorschemes 
+    Plug 'arcticicestudio/nord-vim'
+    
+    call plug#end()
 
-    " Linting
-    let g:ale_linterl = {
-    \   'javascript': ['eslint'],
-    \ }
+    colorscheme nord
 
-    nmap <silent> [W <Plug>(ale_first)
-    nmap <silent> [w <Plug>(ale_previous)
-    nmap <silent> ]w <Plug>(ale_next)
-    nmap <silent> ]W <Plug>(ale_last)
+    let mapleader = " "
+    
+    " lsp
+    set completeopt=menuone,noinsert,noselect
 
-    " Grepper Plugin
-    let g:grepper = {}
-    let g:grepper.tools = ['grep', 'git', 'rg']
+    nnoremap <leader>vd :lua vim.lsp.buf.definition()<CR>
+    nnoremap <leader>vi :lua vim.lsp.buf.implementation()<CR>
+    nnoremap <leader>vsh :lua vim.lsp.buf.signature_help()<CR>
+    nnoremap <leader>vrr :lua vim.lsp.buf.references()<CR>
+    nnoremap <leader>vrn :lua vim.lsp.buf.rename()<CR>
+    nnoremap <leader>vh :lua vim.lsp.buf.hover()<CR>
+    nnoremap <leader>vca :lua vim.lsp.buf.code_action()<CR>
+    nnoremap <leader>vsd :lua vim.lsp.util.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()<CR>
 
-    nnoremap <Leader>* :Grepper -cword -noprompt<CR>
-
-    nmap gs <plug>(GrepperOperatr)
-    nmap gs <plug>(GrepperOperator)
+    let g:completion_matching_strategy_list = ['exact','substring','fuzzy']
+    lua require'lspconfig'.pyright.setup{ on_attach=require'completion'.on_attach }
+    
+   " TreeSitter
+    
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = {"python","c","rust"}, --- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true,              --- false will disable the whole extension
+    disable = { "c", "rust" },  --- list of language that will be disabled
+  },
+}
+EOF
+    
+" telescope
+nnoremap <Leader>pf :lua require('telescope.builtin').find_files()<CR>
 

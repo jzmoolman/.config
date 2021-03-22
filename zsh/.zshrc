@@ -1,4 +1,6 @@
+setopt no_beep
 setopt prompt_subst
+setopt auto_cd
 
 autoload colors
 colors
@@ -50,6 +52,11 @@ add-zsh-hook chpwd update_terminal_cwd
 update_terminal_cwd
 
 
+if [[ -r ~/.aliasrc ]]; then 
+    . ~/.aliasrc
+fi
+
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/jzmoolman/miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -59,7 +66,8 @@ else
     if [ -f "/Users/jzmoolman/miniconda/etc/profile.d/conda.sh" ]; then
        . "/Users/jzmoolman/miniconda/etc/profile.d/conda.sh"
     else
-       export PATH="/Users/jzmoolman/miniconda/bin:$PATH"
+       #export PATH="/Users/jzmoolman/miniconda/bin:$PATH"
+       path=(/Users/jzmoolman/miniconda/bin $PATH)
     fi
 fi
 unset __conda_setup
