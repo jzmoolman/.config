@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =9
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/Users/jzmoolman/src/edx/6.86x/project1/sentiment_analysis2-old-macbook'
 let g:netrw_dirhist_9='/Users/jzmoolman/.config/nvim/lua/lsp_lua'
 let g:netrw_dirhist_8='/Users/jzmoolman/.config/nvim/lua/config'
 let g:netrw_dirhist_7='/Users/jzmoolman/.local/share/nvim/site/pack/packer/start/nlua.nvim/lua/nlua'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_4='/Users/jzmoolman/.local/share/nvim/site/pack/packer/start
 let g:netrw_dirhist_3='/Users/jzmoolman/.local/share/nvim/site/pack/packer/start/nlua.nvim/lua'
 let g:netrw_dirhist_2='/Users/jzmoolman/.local/share/nvim/site/pack/packer/start/nlua.nvim'
 let g:netrw_dirhist_1='/Users/jzmoolman/.config/nvim'
-let g:netrw_dirhist_0='/Users/jzmoolman/src/modvim/big-docs/app/templates/components'

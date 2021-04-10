@@ -1,3 +1,7 @@
+if [[ ! -z $ZORDER ]]; then
+    print $ZDOTDIR/.zshrc
+fi
+
 setopt no_beep
 setopt prompt_subst
 setopt auto_cd
@@ -14,7 +18,6 @@ PS1+='%(2L.+ . )'
 PS1+='%{${fg[white]}${bg[black]}%}'
 
 VISUAL=nvim
-
 
 update_terminal_cwd() {
     # Identify the directory using a "file:" scheme URL, including
@@ -55,6 +58,8 @@ update_terminal_cwd
 if [[ -r ~/.aliasrc ]]; then 
     . ~/.aliasrc
 fi
+
+bindkey -v
 
 
 # >>> conda initialize >>>

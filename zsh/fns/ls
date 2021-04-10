@@ -1,0 +1,7 @@
+local ls
+if [[ -n $LS_COLORS ]]; then
+    ls=(ls -G)
+else
+    ls=(ls -F)
+fi
+command $ls $*

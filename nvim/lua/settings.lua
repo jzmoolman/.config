@@ -22,7 +22,7 @@ utils.opt('o', 'sidescrolloff', 8 )                         -- Columns of contex
 utils.opt('o', 'smartcase', true)                           -- Don't ignore case with capitals
 utils.opt('o', 'splitbelow', true)                          -- Put new windows below current
 utils.opt('o', 'splitright', true)                          -- Put new windows right of current
-utils.opt('o', 'termguicolors', true)                       -- True color support
+-- utils.opt('o', 'termguicolors', true)                       -- True color support
 utils.opt('o', 'incsearch', true)
 
 -- opt('o', 'wildmode', 'list:longest')                  -- Command-line completion mode

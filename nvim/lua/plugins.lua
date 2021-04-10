@@ -21,6 +21,7 @@ return require('packer').startup(function()
     -- Lua development
     use { 'tjdevries/nlua.nvim' }
 
+    use 'glepnir/galaxyline.nvim'
 
     -- Vim dispatch
     use { 'tpope/vim-dispatch' }

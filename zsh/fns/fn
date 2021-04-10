@@ -1,0 +1,6 @@
+fn() {
+    print This a test function
+    print $#
+    print $*
+    print $@
+}

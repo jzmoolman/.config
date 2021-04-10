@@ -32,6 +32,10 @@ local function try_loadstring(s, component, name)
 end
 
 _G.packer_plugins = {
+  ["galaxyline.nvim"] = {
+    loaded = true,
+    path = "/Users/jzmoolman/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
+  },
   ["gruvbox-material"] = {
     loaded = true,
     path = "/Users/jzmoolman/.local/share/nvim/site/pack/packer/start/gruvbox-material"
